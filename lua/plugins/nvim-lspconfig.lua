@@ -1,8 +1,8 @@
 local diagnostic_signs = require("util.lsp").diagnostic_signs
 
 local config = function()
-  vim.diagnostic.config({
-	  virtual_text = {
+	vim.diagnostic.config({
+		virtual_text = {
 			prefix = "■",
 			source = "always",
 		},
@@ -20,16 +20,17 @@ local config = function()
 	end
 
 	-- global default capabilities
-  vim.lsp.config("*", {
-    capabilities = cmp_nvim_lsp.default_capabilities(),
-  })
+	vim.lsp.config("*", {
+		capabilities = cmp_nvim_lsp.default_capabilities(),
+	})
 
-  -- global on_attach
-  vim.api.nvim_create_autocmd("LspAttach", { callback = function(args)
-      local client = vim.lsp.get_client_by_id(args.data.client_id)
-      require("util.lsp").on_attach(client, args.buf)
-    end,
-  })
+	-- global on_attach
+	vim.api.nvim_create_autocmd("LspAttach", {
+		callback = function(args)
+			local client = vim.lsp.get_client_by_id(args.data.client_id)
+			require("util.lsp").on_attach(client, args.buf)
+		end,
+	})
 
 	-- lua
 	vim.lsp.config("lua_ls", {
@@ -42,7 +43,7 @@ local config = function()
 					library = {
 						[vim.fn.stdpath("config") .. "/lua"] = true,
 					},
-          checkThirdParty = false,
+					checkThirdParty = false,
 				},
 			},
 		},
@@ -102,15 +103,19 @@ local config = function()
 		},
 	})
 
-  -- java
-  vim.lsp.config("jdtls", {})
+	-- java
+	vim.lsp.config("jdtls", {})
 
-  -- c/c++
-  vim.lsp.config("clangd", {})
+	-- c/c++
+	vim.lsp.config("clangd", {})
 
-  -- go
-  vim.lsp.config("gopls", {})
+	-- go
+	vim.lsp.config("gopls", {})
 
+	-- asm
+	vim.lsp.config("asm_lsp", {
+		filetypes = { "asm", "vasm", "s" },
+	})
 
 	local luacheck = require("efmls-configs.linters.luacheck")
 	local stylua = require("efmls-configs.formatters.stylua")
@@ -175,7 +180,7 @@ return {
 	lazy = false,
 	dependencies = {
 		"folke/lazydev.nvim",
-    "windwp/nvim-autopairs",
+		"windwp/nvim-autopairs",
 		"mason-org/mason.nvim",
 		"creativenull/efmls-configs-nvim",
 		"hrsh7th/nvim-cmp",

@@ -11,9 +11,10 @@ local opts = {
 		"lua_ls",
 		"emmet_ls",
 		"jsonls",
-    "jdtls",
-    "clangd",
-    "gopls",
+		"jdtls",
+		"clangd",
+		"gopls",
+		"asm_lsp",
 	},
 
 	automatic_enable = true,
@@ -24,7 +25,7 @@ return {
 	opts = opts,
 	event = "BufReadPre",
 	dependencies = {
-    "mason-org/mason.nvim",
-    "neovim/nvim-lspconfig",
-  },
+		"mason-org/mason.nvim",
+		"neovim/nvim-lspconfig",
+	},
 }
