@@ -18,7 +18,7 @@ Managed with WSL2 (Ubuntu 24.04) and Windows Terminal.
 
 ## Supported languages
 
-Python, Java, TypeScript, Go, C/C++, HTML, CSS, Lua, Bash
+Python, Java, TypeScript, Go, C/C++, HTML, CSS, Lua, Bash, Assembly (x86/x86_64, ARM, RISC-V)
 
 ## Installation
 
@@ -35,7 +35,9 @@ lazy.nvim will automatically install all plugins on first launch.
 - Node.js + npm
 - Python 3 + pip
 - Go
+- Rust (cargo) - required for asm-lsp
 - git, make, cmake, build-essential
+- libssl-dev, pkg-config (required to build asm-lsp)
 
 ## Structure
 
