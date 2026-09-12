@@ -46,4 +46,4 @@ lazy.nvim will automatically install all plugins on first launch.
 
 ## License
 
-MIT
+[MIT](LICENSE)
