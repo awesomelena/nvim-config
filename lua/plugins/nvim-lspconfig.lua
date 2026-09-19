@@ -180,7 +180,6 @@ return {
 	lazy = false,
 	dependencies = {
 		"folke/lazydev.nvim",
-		"windwp/nvim-autopairs",
 		"mason-org/mason.nvim",
 		"creativenull/efmls-configs-nvim",
 		"hrsh7th/nvim-cmp",
